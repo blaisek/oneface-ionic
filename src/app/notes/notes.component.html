@@ -1,0 +1,15 @@
+<ion-text><h3> Notes</h3></ion-text>
+
+<p>
+  <button [routerLink]="['./create']">Create</button>
+</p>
+
+<ul>
+  <ion-list [routerLink]="note?._id" *ngFor="let note of notes$|async">
+      <ion-item>
+        <ion-label>
+            {{note?.title}}
+        </ion-label>
+      </ion-item>
+  </ion-list>
+</ul>

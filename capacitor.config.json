@@ -1,0 +1,6 @@
+{
+  "appId": "ch.nzeni.oneface",
+  "appName": "App",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

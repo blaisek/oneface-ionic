@@ -1,0 +1,12 @@
+<!-- <h3> {{ note?.title }}</h3> -->
+ <!-- récupérer le titre de la note et afficher ses caractéristiques à faire dans le .ts-->
+
+<ion-content>
+    <div *ngIf="(note$|async) as note">
+            <h1> Edit {{ note?.title }}</h1>
+            <!--afficher le titre à voir dans le .ts-->
+            
+            <ion-button [routerLink]="['./edit']">Edit</ion-button>
+            <ion-button (click)= "delete()">Delete</ion-button>
+    </div>
+</ion-content>

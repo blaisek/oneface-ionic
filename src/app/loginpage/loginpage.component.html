@@ -1,0 +1,20 @@
+
+
+<ion-content padding style="background-color:silver" >
+
+  <h1 style="text-align: center; margin-top: 10%;font-style:italic; font-family:Cambria; font-size:30px">Face Authentication </h1>    
+
+    <div class="imgcontainer">
+    <img src="assets/imgs/icons8-96.png" alt="Avatar" class="avatar">
+    </div>
+
+  <form style="margin-top: 10%" >
+    <div class="container">
+      <label><b>Email</b></label>
+      <ion-input type="email" placeholder="Enter Email" name="umail" [(ngModel)]="data.Email" required> </ion-input>
+    <br>
+      <ion-button type="submit" (click)="login()">Login</ion-button>
+    </div>
+  </form>
+  
+</ion-content>

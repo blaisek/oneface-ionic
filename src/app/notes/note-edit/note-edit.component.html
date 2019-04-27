@@ -1,0 +1,8 @@
+<ion-content>
+    <div *ngIf="(note$|async) as note">
+            <h1> Edit {{ note?.title }}</h1>
+            <!--afficher le formulaire de la note à àditer -->
+
+            <ion-button (click)='update(note)'>update</ion-button>
+    </div>
+</ion-content>
