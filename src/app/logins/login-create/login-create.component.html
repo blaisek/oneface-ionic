@@ -1,1 +1,22 @@
-<h1> Create new Identifiant</h1>
+<app-header></app-header>
+
+<ion-content>
+<h3> Create new identifier</h3>
+
+<form [formGroup]="creationForm">
+
+    <div class="identifier-container">
+        
+            <ion-input placeholder="title" formControlName="title" type="text" required></ion-input>
+        
+            <ion-input placeholder="username" formControlName="userName" required></ion-input>
+
+            <ion-input placeholder="password" formControlName="password" required></ion-input>
+
+            <ion-input placeholder="webSiteUrl" formControlName="webSiteUrl" required></ion-input>
+        
+            <ion-button  (click)="createNote()" title="submit" ion-button color="primary" expand="block">Create</ion-button>
+    </div>
+
+</form>
+</ion-content>

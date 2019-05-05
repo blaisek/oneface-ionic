@@ -1,4 +1,29 @@
-<h1>Identifiant</h1>
-<p>
-  <button [routerLink]="['./edit']"> Edit</button>
-</p>
+<app-header></app-header>
+
+<ion-content>
+
+    <div *ngIf="(Identifier$|async) as note">
+
+            <h3> Edit {{ Identifier?.title }}</h3>
+            
+        <form [formGroup]="editForm">
+
+            <div class="Identifier-container">
+
+                <ion-input placeholder ={{Identifier?.title}} formControlName="title"  type="text"></ion-input>
+
+                <ion-input placeholder={{Identifier?.userName}} formControlName="userName"  type="text"></ion-input>
+                <ion-input placeholder={{Identifier?.password}} formControlName="password"  type="text"></ion-input>
+                <ion-input placeholder={{Identifier?.webSiteUrl}} formControlName="webSiteUrl"  type="text"></ion-input>
+
+
+
+                <ion-button (click)="update()" expand="block">Edit</ion-button>
+
+                <ion-button (click)= "delete()" expand="block">Delete</ion-button>
+                
+            </div>
+
+        </form>
+    </div>
+</ion-content>

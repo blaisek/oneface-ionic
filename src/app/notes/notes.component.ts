@@ -13,7 +13,6 @@ export class NotesComponent implements OnInit {
   notes$: Observable<NoteInterface[]>;
 
   constructor(
-    // tslint:disable-next-line:variable-name
     private _noteService: NotesService
   ) { }
 

@@ -29,11 +29,10 @@ export class LoginpageComponent {
 
        const result = await this.loginService.postToAPI({image, email: this.data.Email}).toPromise().catch(e => e);
        console.log('result', result);
-       console.log('image', image);
-       console.log('email', this.data.Email);
+      //  console.log('image', image);
+      //  console.log('email', this.data.Email);
        if (result.code === 200) {
         this.navCtrl.navigateRoot('dashboard');
-        //  console.log('go to dashboard');
        }
     }
 

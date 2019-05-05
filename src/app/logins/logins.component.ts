@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IdentifiantInterface } from './model/identifiant-interface';
+import { IdentifiersService } from './identifiers.service';
 
 @Component({
   selector: 'app-logins',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginsComponent implements OnInit {
 
-  constructor() { }
+  identifiers$: Observable<IdentifiantInterface[]>;
+
+  constructor(
+    private _identifierService: IdentifiersService
+  ) { }
 
   ngOnInit() {
+
+    this._identifierService.load();
+    this.identifiers$ = this._identifierService.identifiers$;
+
   }
 
 }

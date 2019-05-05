@@ -15,13 +15,12 @@ import { NotesComponent } from './notes/notes.component';
 import { LoginsComponent } from './logins/logins.component';
 import { NoteCreateComponent } from './notes/note-create/note-create.component';
 import { NoteComponent } from './notes/note/note.component';
-import { NoteEditComponent } from './notes/note-edit/note-edit.component';
 import { LoginCreateComponent } from './logins/login-create/login-create.component';
 import { LoginComponent } from './logins/login/login.component';
-import { LoginEditComponent } from './logins/login-edit/login-edit.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -32,11 +31,10 @@ import { ToastrModule } from 'ngx-toastr';
     LoginsComponent,
     NoteCreateComponent,
     NoteComponent,
-    NoteEditComponent,
     LoginCreateComponent,
     LoginComponent,
-    LoginEditComponent,
-    LoginpageComponent
+    LoginpageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

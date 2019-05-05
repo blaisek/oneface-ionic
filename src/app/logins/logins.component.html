@@ -1,6 +1,20 @@
-<h1> Identifiants</h1>
+<app-header></app-header>
+
+<ion-content>
+
+<ion-text><h3> Logins component</h3></ion-text>
 
 <p>
-  <button [routerLink]="['./create']">Create</button>
+  <ion-button [routerLink]="['./logincreate']">Create</ion-button>
 </p>
 
+<ul>
+  <ion-list [routerLink]="identifiant?._id" *ngFor="let identifiant of identifiers$|async">
+      <ion-item>
+        <ion-label>
+            {{identifiant?.title}}
+        </ion-label>
+      </ion-item>
+  </ion-list>
+</ul>
+</ion-content>

@@ -13,7 +13,7 @@ export class NotesService {
   // tslint:disable-next-line:variable-name
   private _notes$: BehaviorSubject<NoteInterface[]>  = new BehaviorSubject(null);
   public notes$ = this._notes$.asObservable();
-  url = 'http://0.0.0.0:8080/api/notes'; // remplacer par api prod
+  public url = 'http://0.0.0.0:8080/api/notes'; // remplacer par api prod
   constructor(private http: HttpClient, public navCtrl: NavController) {
   }
 
@@ -24,9 +24,9 @@ export class NotesService {
     }
 
     this.http.get(this.url)
-    .pipe(
-      tap( data => console.log(data))
-    )
+    // .pipe(
+    //   tap( data => console.log(data))
+    // )
     .subscribe((data: {notes: NoteInterface[]}) => this._notes$.next(data.notes));
   }
 
@@ -43,8 +43,9 @@ export class NotesService {
 
   delById(id: string) {
     // delete method
-    return this.http.delete(this.url + '/' + id);
-    // this.navCtrl.navigateRoot('notes');
+    this.http.delete(this.url + '/' + id).toPromise()
+      .then(_ => this.navCtrl.navigateRoot('dashboard/notes'))
+      .catch(err => err);
   }
 
   updateById(id: string, note: NoteInterface) {

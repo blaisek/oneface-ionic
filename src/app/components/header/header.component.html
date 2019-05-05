@@ -1,0 +1,11 @@
+
+<ion-header>
+        <ion-toolbar>
+            <ion-title>One Face</ion-title>
+          <ion-buttons *ngIf="canGoBack" defaultHref="previousUrl" slot="start">
+                <ion-button color="dark" (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+                </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+</ion-header>

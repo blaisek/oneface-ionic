@@ -5,10 +5,8 @@ import { NotesComponent } from './notes/notes.component';
 import { LoginsComponent } from './logins/logins.component';
 import { NoteCreateComponent } from './notes/note-create/note-create.component';
 import { NoteComponent } from './notes/note/note.component';
-import { NoteEditComponent } from './notes/note-edit/note-edit.component';
 import { LoginCreateComponent } from './logins/login-create/login-create.component';
 import { LoginComponent } from './logins/login/login.component';
-import { LoginEditComponent } from './logins/login-edit/login-edit.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 
 const routes: Routes = [
@@ -21,16 +19,14 @@ const routes: Routes = [
   {path: '', component: NotesComponent},
   {path: 'create', component: NoteCreateComponent},
   {path: ':id', children: [
-    {path: '', component: NoteComponent},
-    {path: 'edit', component: NoteEditComponent},
+    {path: '', component: NoteComponent}
   ]},
 ]},
 {path: 'logins', children: [
   {path: '', component: LoginsComponent },
-  {path: 'create', component: LoginCreateComponent },
+  {path: 'logincreate', component: LoginCreateComponent },
   {path: ':id', children: [
-    {path: '', component: LoginComponent},
-    {path: 'edit', component: LoginEditComponent }
+    {path: '', component: LoginComponent}
   ]}
 ] }
 ] }

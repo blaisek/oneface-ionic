@@ -1,12 +1,24 @@
-<!-- <h3> {{ note?.title }}</h3> -->
- <!-- récupérer le titre de la note et afficher ses caractéristiques à faire dans le .ts-->
-
+<app-header></app-header>
 <ion-content>
+
     <div *ngIf="(note$|async) as note">
-            <h1> Edit {{ note?.title }}</h1>
-            <!--afficher le titre à voir dans le .ts-->
+
+            <h3> Edit {{ note?.title }}</h3>
             
-            <ion-button [routerLink]="['./edit']">Edit</ion-button>
-            <ion-button (click)= "delete()">Delete</ion-button>
+        <form [formGroup]="editForm">
+
+            <div class="Note-container">
+
+                <ion-input placeholder ={{note?.title}} formControlName="title"  type="text"></ion-input>
+
+                <ion-textarea placeholder={{note?.content}} formControlName="content"  type="text"></ion-textarea>
+
+                <ion-button (click)="update()" expand="block">Edit</ion-button>
+
+                <ion-button (click)= "delete()" expand="block">Delete</ion-button>
+                
+            </div>
+
+        </form>
     </div>
 </ion-content>
